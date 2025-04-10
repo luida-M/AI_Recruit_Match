@@ -77,6 +77,8 @@ Sos una reclutadora IT con experiencia. Analizá si el candidato encaja en el pu
             "Content-Type": "application/json"
         }
 
+
+        
         # 🚨 CORRECTO PARA OPENROUTER
         data = {
             "model": "mistralai/mixtral-8x7b",
@@ -117,6 +119,8 @@ Sos una reclutadora especializada en IT. A continuación recibirás una tabla co
                 }
 
                 response2 = requests.post(api_url, headers=headers, data=json.dumps(data2))
+                print(response.status_code)
+                print(response.text)
 
                 if response2.status_code == 200:
                     analisis_final = response2.json()['choices'][0]['message']['content']
