@@ -1,6 +1,5 @@
-requirements.txt
 streamlit
-openai
-PyMuPDF
-python-docx
 pandas
+openai
+python-docx
+PyMuPDF
