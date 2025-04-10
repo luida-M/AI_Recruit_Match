@@ -10,13 +10,7 @@ import requests
 
 # API KEY y URL (se puede ocultar mejor con secrets en producción)
 api_key = st.secrets["API_KEY"]
-#api_url = "model": "openrouter/mistralai/mixtral-8x7b"
-data = {
-    "model": "openrouter/mistralai/mixtral-8x7b",
-    "messages": [{"role": "user", "content": prompt_comparacion}]
-}
-
-
+api_url = "https://openrouter.ai/api/v1/chat/completions"
 st.set_page_config(page_title="Análisis de Candidato IA", layout="wide")
 
 # ============================
@@ -81,16 +75,18 @@ Sos una reclutadora IT con experiencia. Analizá si el candidato encaja en el pu
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json"
         }
+
+        # 🚨 CORRECTO PARA OPENROUTER
         data = {
-            "model": "openai/gpt-3.5-turbo",
+            "model": "mistralai/mixtral-8x7b",
             "messages": [{"role": "user", "content": prompt_comparacion}]
         }
+
         response = requests.post(api_url, headers=headers, data=json.dumps(data))
 
         if response.status_code == 200:
             content = response.json()['choices'][0]['message']['content']
 
-            # DEBUG: Mostrar contenido bruto recibido
             with st.expander("🧾 Respuesta completa de la IA (debug)"):
                 st.text(content)
 
@@ -115,9 +111,10 @@ Sos una reclutadora especializada en IT. A continuación recibirás una tabla co
 👉 Finalizá con una sugerencia concreta al cliente para decidir.
 """
                 data2 = {
-                    "model": "openai/gpt-3.5-turbo",
+                    "model": "mistralai/mixtral-8x7b",
                     "messages": [{"role": "user", "content": prompt_analisis}]
                 }
+
                 response2 = requests.post(api_url, headers=headers, data=json.dumps(data2))
 
                 if response2.status_code == 200:
