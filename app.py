@@ -1,30 +1,15 @@
 import streamlit as st
-import openai
+from smolagent import SmolAgent
 
-class SmolAgent:
-    def __init__(self, api_key):
-        openai.api_key = api_key
+# TEMPORALMENTE así para confirmar que el problema es `st.secrets`
+api_key = "sk-tu-clave-copiada-directamente"
+st.write("Usando clave directamente:", api_key)  # Solo debug
 
-    def run(self, prompt):
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "user", "content": prompt}
-            ]
-        )
-        return response['choices'][0]['message']['content']
+agent = SmolAgent(api_key=api_key)
 
-def agent_demo():
-    api_key = st.secrets["API_KEY"]
-    #st.write("API key cargada:", api_key)  # DEBUG
-    st.write("API Key desde secrets:", st.secrets["API_KEY"])
-    agent = SmolAgent(api_key=api_key)
+st.title("Mi Agente Inteligente 🤖")
+user_input = st.text_input("Decile algo:")
 
-    st.title("Mi Agente Inteligente 🤖")
-    user_input = st.text_input("Decile algo:")
-
-    if user_input:
-        response = agent.run(user_input)
-        st.write("Respuesta del agente:", response)
-
-agent_demo()
+if user_input:
+    response = agent.run(user_input)
+    st.write("Respuesta del agente:", response)
