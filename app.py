@@ -1,14 +1,24 @@
 import streamlit as st
-from smolagent import SmolAgent
+import openai
+
+class SmolAgent:
+    def __init__(self, api_key):
+        openai.api_key = api_key
+
+    def run(self, prompt):
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "user", "content": prompt}
+            ]
+        )
+        return response['choices'][0]['message']['content']
 
 def agent_demo():
-    # Obtener clave secreta
     api_key = st.secrets["API_KEY"]
-
-    # Inicializar agente
+    st.write("API key cargada:", api_key)  # DEBUG
     agent = SmolAgent(api_key=api_key)
 
-    # UI
     st.title("Mi Agente Inteligente 🤖")
     user_input = st.text_input("Decile algo:")
 
@@ -16,5 +26,4 @@ def agent_demo():
         response = agent.run(user_input)
         st.write("Respuesta del agente:", response)
 
-# Llamás a la función
 agent_demo()
