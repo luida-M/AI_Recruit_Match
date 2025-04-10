@@ -19,7 +19,7 @@ Esta aplicación permite analizar un CV en PDF comparándolo con los requerimien
 
 ## 📦 Instalación
 ```bash
-git clone https://github.com/tu-usuario/tu-repo.git
+git clone https://github.com/luida-M/AI_Recruit_Match.git
 cd tu-repo
 pip install -r requirements.txt
 streamlit run app.py
