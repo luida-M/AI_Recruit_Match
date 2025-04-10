@@ -16,7 +16,8 @@ class SmolAgent:
 
 def agent_demo():
     api_key = st.secrets["API_KEY"]
-    st.write("API key cargada:", api_key)  # DEBUG
+    #st.write("API key cargada:", api_key)  # DEBUG
+    st.write("API Key desde secrets:", st.secrets["API_KEY"])
     agent = SmolAgent(api_key=api_key)
 
     st.title("Mi Agente Inteligente 🤖")
