@@ -10,7 +10,12 @@ import requests
 
 # API KEY y URL (se puede ocultar mejor con secrets en producción)
 api_key = st.secrets["API_KEY"]
-api_url = "https://openrouter.ai/api/v1/chat/completions"
+#api_url = "model": "openrouter/mistralai/mixtral-8x7b"
+data = {
+    "model": "openrouter/mistralai/mixtral-8x7b",
+    "messages": [{"role": "user", "content": prompt_comparacion}]
+}
+
 
 st.set_page_config(page_title="Análisis de Candidato IA", layout="wide")
 
