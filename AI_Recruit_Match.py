@@ -8,11 +8,11 @@ import json
 import io
 import requests
 
-# API KEY y URL (se puede ocultar mejor con secrets en producción)
+# API KEY y URL (oculta mejor con secrets en producción)
 api_key = st.secrets["API_KEY"]
 api_url = "https://openrouter.ai/api/v1/chat/completions"
 st.set_page_config(page_title="Análisis de Candidato IA", layout="wide")
-#st.write("API key cargada:", api_key)  # solo para debug
+
 
 # ============================
 # 🧠 TÍTULO Y DESCRIPCIÓN
