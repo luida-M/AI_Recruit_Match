@@ -71,15 +71,13 @@ Sos una reclutadora IT con experiencia. Analizá si el candidato encaja en el pu
 📌 CV:
 {cv_text}
 """
-
-       headers = {
+     
+        headers = {
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
             "HTTP-Referer": "https://airecruitmatch-lnpfegiappsk9ofc7qngqmo.streamlit.app/",
             "X-Title": "AI Recruit Match"
-       }
-
-
+        }
 
         
         # 🚨 CORRECTO PARA OPENROUTER
