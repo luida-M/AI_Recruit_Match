@@ -17,9 +17,7 @@ Esta aplicación permite analizar un CV en PDF comparándolo con los requerimien
 - [Pandas](https://pandas.pydata.org/)
 - [XlsxWriter](https://xlsxwriter.readthedocs.io/)
 
-## 📦 Instalación
+## Repositorio y APP
 ```bash
-git clone https://github.com/luida-M/AI_Recruit_Match.git
-cd tu-repo
-pip install -r requirements.txt
-streamlit run app.py https://airecruitmatch-lnpfegiappsk9ofc7qngqmo.streamlit.app/
+Github: https://github.com/luida-M/AI_Recruit_Match.git
+Streamlit app: https://airecruitmatch-lnpfegiappsk9ofc7qngqmo.streamlit.app/
