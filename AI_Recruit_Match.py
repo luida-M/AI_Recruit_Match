@@ -77,7 +77,7 @@ Sos una reclutadora IT con experiencia. Analizá si el candidato encaja en el pu
             "Content-Type": "application/json",
             "HTTP-Referer": "https://airecruitmatch-lnpfegiappsk9ofc7qngqmo.streamlit.app/",
             "X-Title": "AI Recruit Match"
-           }
+       }
 
 
 
