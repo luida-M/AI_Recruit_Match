@@ -82,7 +82,7 @@ Sos una reclutadora IT con experiencia. Analizá si el candidato encaja en el pu
         
         # 🚨 CORRECTO PARA OPENROUTER
         data = {
-            "model": ""model": "openai/gpt-3.5-turbo",
+            "model": "openai/gpt-3.5-turbo",
 
             "messages": [{"role": "user", "content": prompt_comparacion}]
         }
@@ -116,7 +116,7 @@ Sos una reclutadora especializada en IT. A continuación recibirás una tabla co
 👉 Finalizá con una sugerencia concreta al cliente para decidir.
 """
                 data2 = {
-                    "model": ""model": "openai/gpt-3.5-turbo",
+                    "model": "openai/gpt-3.5-turbo",
 
                     "messages": [{"role": "user", "content": prompt_analisis}]
                 }
